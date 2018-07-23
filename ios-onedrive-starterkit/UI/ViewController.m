@@ -18,14 +18,28 @@
     
     [super viewDidLoad];
     
-    [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
-        if (!error){
-            NSLog(error.localizedDescription);
-        }
-    }];
-    
 }
 
+- (IBAction) authenticateTapped: (id)sender {
+    
+    [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
+        if (error){
+            NSLog(error.localizedDescription);
+        }
+        else {
+            NSLog(@"Success");
+        }
+    }];
+}
+
+- (IBAction) viewTapped: (id)sender {
+}
+
+- (IBAction) uploadTapped: (id)sender {
+}
+
+- (IBAction) logoutTapped: (id)sender {
+}
 
 
 
