@@ -18,8 +18,6 @@
     
     [super viewDidLoad];
     
-    [ODClient setActiveDirectoryAppId:@"APP_ID" redirectURL:@"REDIRECT_URL"];
-    
 }
 
 

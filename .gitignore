@@ -2,6 +2,9 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+# Custom Additions - Don't check in the actualy OneDrive Integration Keys
+ios-onedrive-starterkit/Configuration/OneDriveKeys.plist
+
 ## Build generated
 build/
 DerivedData/
