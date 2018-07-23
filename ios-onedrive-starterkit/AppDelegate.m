@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"OneDriveKeys3" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"OneDriveKeys" ofType:@"plist"];
     NSDictionary *keysDictionary = [NSDictionary dictionaryWithContentsOfFile:path];
     
     if(!keysDictionary) {

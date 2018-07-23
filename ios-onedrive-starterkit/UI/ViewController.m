@@ -18,6 +18,12 @@
     
     [super viewDidLoad];
     
+    [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
+        if (!error){
+            NSLog(error.localizedDescription);
+        }
+    }];
+    
 }
 
 
