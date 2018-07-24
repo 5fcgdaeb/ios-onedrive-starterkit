@@ -22,19 +22,22 @@
                                 <rect key="frame" x="4" y="64" width="367" height="210"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-4H-cve" userLabel="Authenticate">
-                                        <rect key="frame" x="139.5" y="0.0" width="88" height="30"/>
-                                        <state key="normal" title="Authenticate"/>
+                                        <rect key="frame" x="89.5" y="0.0" width="188" height="30"/>
+                                        <state key="normal" title="Authenticate with OneDrive"/>
                                         <connections>
                                             <action selector="authenticateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JX5-xa-CuO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS4-1D-L1I" userLabel="View Files">
-                                        <rect key="frame" x="149" y="60" width="69" height="30"/>
-                                        <state key="normal" title="View Files"/>
+                                        <rect key="frame" x="125" y="60" width="117" height="30"/>
+                                        <state key="normal" title="View Root Folder"/>
+                                        <connections>
+                                            <action selector="viewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUP-q7-DN2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyB-hm-Bgu" userLabel="Upload File">
-                                        <rect key="frame" x="145" y="120" width="77" height="30"/>
-                                        <state key="normal" title="Upload File"/>
+                                        <rect key="frame" x="117.5" y="120" width="132" height="30"/>
+                                        <state key="normal" title="Upload Sample File"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teE-fj-jhv" userLabel="Logout">
                                         <rect key="frame" x="157.5" y="180" width="52" height="30"/>
@@ -51,6 +54,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="authenticateButton" destination="Gta-4H-cve" id="MLK-Fj-8KI"/>
+                        <outlet property="logoutButton" destination="teE-fj-jhv" id="Xri-Oq-gvx"/>
+                        <outlet property="uploadButton" destination="kyB-hm-Bgu" id="Byl-d2-ayp"/>
+                        <outlet property="viewRootButton" destination="pS4-1D-L1I" id="H8K-yK-qVS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
