@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB5B0AFE2107985500B3D5BD /* StarterKitOneDriveAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5B0AFD2107985500B3D5BD /* StarterKitOneDriveAPI.m */; };
+		BBAE13F921099BF800CFF7DB /* Sample_PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBAE13F621099BF800CFF7DB /* Sample_PDF.pdf */; };
 		BBE503D82105E3D20039DDA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE503D72105E3D20039DDA7 /* AppDelegate.m */; };
 		BBE503DB2105E3D20039DDA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE503DA2105E3D20039DDA7 /* ViewController.m */; };
 		BBE503DE2105E3D20039DDA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE503DC2105E3D20039DDA7 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		BB5B0AF9210790E500B3D5BD /* OneDriveAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneDriveAPI.h; sourceTree = "<group>"; };
 		BB5B0AFC2107985500B3D5BD /* StarterKitOneDriveAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarterKitOneDriveAPI.h; sourceTree = "<group>"; };
 		BB5B0AFD2107985500B3D5BD /* StarterKitOneDriveAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarterKitOneDriveAPI.m; sourceTree = "<group>"; };
+		BBAE13F621099BF800CFF7DB /* Sample_PDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Sample_PDF.pdf; sourceTree = "<group>"; };
 		BBE503D32105E3D20039DDA7 /* ios-onedrive-starterkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-onedrive-starterkit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE503D62105E3D20039DDA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BBE503D72105E3D20039DDA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		BBE5040321060A220039DDA7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BBAE13F621099BF800CFF7DB /* Sample_PDF.pdf */,
 				BBE503E52105E3D40039DDA7 /* main.m */,
 				BBE503DF2105E3D40039DDA7 /* Assets.xcassets */,
 				BBE5040B2106120D0039DDA7 /* ios-onedrive-starterkit-Prefix.pch */,
@@ -252,6 +255,7 @@
 				BBE503E32105E3D40039DDA7 /* LaunchScreen.storyboard in Resources */,
 				BBE503E02105E3D40039DDA7 /* Assets.xcassets in Resources */,
 				BBE503DE2105E3D20039DDA7 /* Main.storyboard in Resources */,
+				BBAE13F921099BF800CFF7DB /* Sample_PDF.pdf in Resources */,
 				BBE5040821060C2C0039DDA7 /* OneDriveKeys-Sample.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,12 +10,15 @@
 
 @protocol OneDriveAPI <NSObject>
 
+- (instancetype)init: (ODClient*) client;
+
 - (BOOL) isLoggedIn;
+- (void) logoutWithHandler: (void (^)(NSError *error)) handler;
 
-- (void) rootItem:(void (^)(ODItem *response, NSError *error)) handler;
-
+- (void) rootFolder:(void (^)(ODItem *response, NSError *error)) handler;
 - (void) itemWithId: (NSString*) itemId completionHandler:(void (^)(ODItem *response, NSError *error)) handler;
 
-- (void) logoutWithHandler: (void (^)(NSError *error)) handler;
+- (void) upload: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler;
+
 
 @end

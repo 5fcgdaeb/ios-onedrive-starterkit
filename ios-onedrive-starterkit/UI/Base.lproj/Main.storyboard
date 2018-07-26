@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qzg-WG-y8x">
-                                <rect key="frame" x="4" y="64" width="367" height="210"/>
+                                <rect key="frame" x="4" y="64" width="367" height="270"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-4H-cve" userLabel="Authenticate">
                                         <rect key="frame" x="89.5" y="0.0" width="188" height="30"/>
@@ -35,13 +35,23 @@
                                             <action selector="viewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUP-q7-DN2"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jN6-wz-fPC" userLabel="Fetch Item">
+                                        <rect key="frame" x="81" y="120" width="205" height="30"/>
+                                        <state key="normal" title="Fetch Any File/Folder By Its ID"/>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyB-hm-Bgu" userLabel="Upload File">
-                                        <rect key="frame" x="117.5" y="120" width="132" height="30"/>
-                                        <state key="normal" title="Upload Sample File"/>
+                                        <rect key="frame" x="65.5" y="180" width="236" height="30"/>
+                                        <state key="normal" title="Upload Sample File To Root Folder"/>
+                                        <connections>
+                                            <action selector="uploadTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IN7-P3-BN5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teE-fj-jhv" userLabel="Logout">
-                                        <rect key="frame" x="157.5" y="180" width="52" height="30"/>
+                                        <rect key="frame" x="157.5" y="240" width="52" height="30"/>
                                         <state key="normal" title="Log out"/>
+                                        <connections>
+                                            <action selector="logoutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h2R-TM-bfW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -56,6 +66,7 @@
                     </view>
                     <connections>
                         <outlet property="authenticateButton" destination="Gta-4H-cve" id="MLK-Fj-8KI"/>
+                        <outlet property="fetchItemButton" destination="jN6-wz-fPC" id="Xx8-iz-NA7"/>
                         <outlet property="logoutButton" destination="teE-fj-jhv" id="Xri-Oq-gvx"/>
                         <outlet property="uploadButton" destination="kyB-hm-Bgu" id="Byl-d2-ayp"/>
                         <outlet property="viewRootButton" destination="pS4-1D-L1I" id="H8K-yK-qVS"/>

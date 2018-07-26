@@ -11,6 +11,4 @@
 
 @interface StarterKitOneDriveAPI : NSObject <OneDriveAPI>
 
-- (instancetype)init: (ODClient*) client;
-
 @end

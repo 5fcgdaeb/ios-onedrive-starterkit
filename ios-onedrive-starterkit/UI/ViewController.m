@@ -12,6 +12,7 @@
 @property(strong) StarterKitOneDriveAPI* api;
 @property (weak, nonatomic) IBOutlet UIButton *authenticateButton;
 @property (weak, nonatomic) IBOutlet UIButton *viewRootButton;
+@property (weak, nonatomic) IBOutlet UIButton *fetchItemButton;
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
@@ -23,7 +24,6 @@
     
     [super viewDidLoad];
     [self updateButtonEnableDisable];
-    
 }
 
 - (void) updateButtonEnableDisable {
@@ -31,25 +31,29 @@
     if(self.api) {
         self.authenticateButton.enabled = NO;
         self.viewRootButton.enabled = YES;
+        self.fetchItemButton.enabled = YES;
         self.uploadButton.enabled = YES;
         self.logoutButton.enabled = YES;
     }
     else {
         self.authenticateButton.enabled = YES;
         self.viewRootButton.enabled = NO;
+        self.fetchItemButton.enabled = NO;
         self.uploadButton.enabled = NO;
         self.logoutButton.enabled = NO;
     }
 }
 - (IBAction) authenticateTapped: (id)sender {
-    
+
     [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
         if (error){
             NSLog(@"%@", error.localizedDescription);
         }
         else {
             self.api = [[StarterKitOneDriveAPI alloc] init:client];
-            [self updateButtonEnableDisable];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateButtonEnableDisable];
+            });
             NSLog(@"Success");
         }
     }];
@@ -57,7 +61,7 @@
 
 - (IBAction) viewTapped: (id)sender {
     
-    [self.api rootItem:^(ODItem *response, NSError *error) {
+    [self.api rootFolder:^(ODItem *response, NSError *error) {
         if (error){
             NSLog(@"%@", error.localizedDescription);
         }
@@ -90,6 +94,22 @@
 }
 
 - (IBAction) uploadTapped: (id)sender {
+    
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"Sample_PDF" ofType:@"pdf"];
+    NSError *error;
+    NSData* data = [NSData dataWithContentsOfFile:filepath options:NSDataReadingMappedAlways error:&error];
+    
+    if (error) {
+        NSLog(@"Error reading file: %@", error.localizedDescription);
+        return;
+    }
+    
+    [self.api upload:data withFileName:@"Sampo.pdf" completionHandler:^(NSError *error) {
+        if(error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    
 }
 
 - (IBAction) logoutTapped: (id)sender {
@@ -99,7 +119,10 @@
             NSLog(@"%@", error.localizedDescription);
         }
         else {
-            [self updateButtonEnableDisable];
+            self.api = nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self updateButtonEnableDisable];
+            });
             NSLog(@"Signed out.");
         }
     }];

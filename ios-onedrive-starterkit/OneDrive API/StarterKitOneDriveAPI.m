@@ -9,9 +9,7 @@
 #import "StarterKitOneDriveAPI.h"
 
 @interface StarterKitOneDriveAPI ()
-
 @property(strong) ODClient* client;
-
 @end
 
 @implementation StarterKitOneDriveAPI
@@ -26,9 +24,16 @@
     return self.client != nil;
 }
 
-- (void) rootItem:(void (^)(ODItem *response, NSError *error))completionHandler {
+- (void) logoutWithHandler: (void (^)(NSError *error)) handler {
+    
+    [self.client signOutWithCompletion:handler];
+    
+}
+
+- (void) rootFolder:(void (^)(ODItem *response, NSError *error))completionHandler {
     
     [[[[self.client drive] items:@"root"] request] getWithCompletion:completionHandler];
+    [self availableDrives];
     
 }
 
@@ -38,10 +43,19 @@
     
 }
 
-- (void) logoutWithHandler: (void (^)(NSError *error)) handler {
+- (void) upload: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler {
     
-    [self.client signOutWithCompletion:handler];
+    ODItemContentRequest* request = [[[[self.client drive] items:@"root"] itemByPath:filename] contentRequest];
     
+    [request uploadFromData:data completion:^(ODItem *response, NSError *error) {
+        handler(error);
+    }];
+}
+
+- (void) availableDrives {
+    [[[self.client drives] request] getWithCompletion:^(ODCollection *response, ODDrivesCollectionRequest *nextRequest, NSError *error) {
+        NSLog(@"hello");
+    }];
 }
 
 @end
