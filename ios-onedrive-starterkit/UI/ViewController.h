@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "StarterKitOneDriveAPI.h"
+#import "ItemDetailVC.h"
 
 @interface ViewController : UIViewController
 

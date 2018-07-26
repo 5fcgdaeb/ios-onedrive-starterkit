@@ -33,7 +33,6 @@
                                         <state key="normal" title="View Root Folder"/>
                                         <connections>
                                             <action selector="viewRootFolderTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5e-rn-IoR"/>
-                                            <action selector="viewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUP-q7-DN2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jN6-wz-fPC" userLabel="Fetch Item">
@@ -77,7 +76,67 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="SnQ-VN-G7c" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+        </scene>
+        <!--Item DetailVC-->
+        <scene sceneID="jxR-aK-fLU">
+            <objects>
+                <viewController storyboardIdentifier="ItemDetailVC" id="h5V-NN-LaQ" customClass="ItemDetailVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yVr-QO-tA0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wmw-dd-U8c">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BasicCell" id="nvA-gf-BQw">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvA-gf-BQw" id="xj3-yj-uPI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="h5V-NN-LaQ" id="gcj-kc-gSh"/>
+                                    <outlet property="delegate" destination="h5V-NN-LaQ" id="KV8-Xc-j1n"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Lx-07-1dw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Details" id="09b-ky-7E2">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="miP-dw-UEB">
+                                            <connections>
+                                                <segue destination="SnQ-VN-G7c" kind="unwind" unwindAction="unwind3:" id="Lok-mD-3pY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Lx-07-1dw" firstAttribute="trailing" secondItem="KSI-O2-BcE" secondAttribute="trailing" id="NvI-ea-KSV"/>
+                            <constraint firstItem="Wmw-dd-U8c" firstAttribute="leading" secondItem="KSI-O2-BcE" secondAttribute="leading" id="RDT-Uy-NGN"/>
+                            <constraint firstItem="0Lx-07-1dw" firstAttribute="leading" secondItem="KSI-O2-BcE" secondAttribute="leading" id="dUi-xF-Z36"/>
+                            <constraint firstItem="Wmw-dd-U8c" firstAttribute="top" secondItem="0Lx-07-1dw" secondAttribute="bottom" id="fTu-Rf-vSJ"/>
+                            <constraint firstItem="Wmw-dd-U8c" firstAttribute="bottom" secondItem="KSI-O2-BcE" secondAttribute="bottom" id="g6h-Fp-zww"/>
+                            <constraint firstItem="Wmw-dd-U8c" firstAttribute="trailing" secondItem="KSI-O2-BcE" secondAttribute="trailing" id="pOz-Rv-8fg"/>
+                            <constraint firstItem="0Lx-07-1dw" firstAttribute="top" secondItem="KSI-O2-BcE" secondAttribute="top" id="sKl-hT-uZc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KSI-O2-BcE"/>
+                    </view>
+                    <connections>
+                        <outlet property="itemDetailTableView" destination="Wmw-dd-U8c" id="giU-Z9-tyG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Af-kM-5fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="31.934032983508249"/>
         </scene>
     </scenes>
 </document>

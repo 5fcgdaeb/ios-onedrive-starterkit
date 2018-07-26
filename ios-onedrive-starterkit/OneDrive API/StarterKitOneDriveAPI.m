@@ -38,7 +38,7 @@
 
 - (void) itemWithId: (NSString*) itemId completionHandler:(void (^)(ODItem *item, NSError *error)) handler {
     
-    [[[[self.client drive] items:itemId]  request] getWithCompletion: handler];
+    [[[[self.client drive] items:itemId] request] getWithCompletion: handler];
     
 }
 

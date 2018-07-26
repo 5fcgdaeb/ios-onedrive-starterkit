@@ -67,6 +67,9 @@
         }
         else {
             NSLog(@"%@", folder.debugDescription);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self launchItemDetailVCWithItem:folder];
+            });
         }
     }];
     
@@ -132,6 +135,16 @@
     }];
 }
 
+- (IBAction) unwind3:(UIStoryboardSegue *) segue {
+    NSLog(@"Unwind happened.");
+}
+
+- (void) launchItemDetailVCWithItem: (ODItem*) item {
+    ItemDetailVC* itemDetailVC = (ItemDetailVC*) [self.storyboard instantiateViewControllerWithIdentifier:@"ItemDetailVC"];
+    [itemDetailVC configureWithItem:item];
+    itemDetailVC.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:itemDetailVC animated:YES completion:nil];
+}
 
 
 @end

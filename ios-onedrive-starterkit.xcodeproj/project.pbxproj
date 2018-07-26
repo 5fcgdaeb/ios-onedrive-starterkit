@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB5B0AFE2107985500B3D5BD /* StarterKitOneDriveAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5B0AFD2107985500B3D5BD /* StarterKitOneDriveAPI.m */; };
 		BBAE13F921099BF800CFF7DB /* Sample_PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBAE13F621099BF800CFF7DB /* Sample_PDF.pdf */; };
+		BBAE140D2109F35C00CFF7DB /* ItemDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE140C2109F35C00CFF7DB /* ItemDetailVC.m */; };
 		BBE503D82105E3D20039DDA7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE503D72105E3D20039DDA7 /* AppDelegate.m */; };
 		BBE503DB2105E3D20039DDA7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE503DA2105E3D20039DDA7 /* ViewController.m */; };
 		BBE503DE2105E3D20039DDA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE503DC2105E3D20039DDA7 /* Main.storyboard */; };
@@ -43,6 +44,8 @@
 		BB5B0AFC2107985500B3D5BD /* StarterKitOneDriveAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarterKitOneDriveAPI.h; sourceTree = "<group>"; };
 		BB5B0AFD2107985500B3D5BD /* StarterKitOneDriveAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarterKitOneDriveAPI.m; sourceTree = "<group>"; };
 		BBAE13F621099BF800CFF7DB /* Sample_PDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Sample_PDF.pdf; sourceTree = "<group>"; };
+		BBAE140B2109F35C00CFF7DB /* ItemDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemDetailVC.h; sourceTree = "<group>"; };
+		BBAE140C2109F35C00CFF7DB /* ItemDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemDetailVC.m; sourceTree = "<group>"; };
 		BBE503D32105E3D20039DDA7 /* ios-onedrive-starterkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-onedrive-starterkit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE503D62105E3D20039DDA7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BBE503D72105E3D20039DDA7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 			children = (
 				BBE503D92105E3D20039DDA7 /* ViewController.h */,
 				BBE503DA2105E3D20039DDA7 /* ViewController.m */,
+				BBAE140B2109F35C00CFF7DB /* ItemDetailVC.h */,
+				BBAE140C2109F35C00CFF7DB /* ItemDetailVC.m */,
 				BBE503DC2105E3D20039DDA7 /* Main.storyboard */,
 				BBE503E12105E3D40039DDA7 /* LaunchScreen.storyboard */,
 			);
@@ -270,6 +275,7 @@
 				BBE503DB2105E3D20039DDA7 /* ViewController.m in Sources */,
 				BB5B0AFE2107985500B3D5BD /* StarterKitOneDriveAPI.m in Sources */,
 				BBE503E62105E3D40039DDA7 /* main.m in Sources */,
+				BBAE140D2109F35C00CFF7DB /* ItemDetailVC.m in Sources */,
 				BBE503D82105E3D20039DDA7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
