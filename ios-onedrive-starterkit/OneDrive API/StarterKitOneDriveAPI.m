@@ -32,6 +32,21 @@
 
 - (void) rootFolder:(void (^)(ODItem *folder, NSError *error))completionHandler {
     
+//    ODItemRequestBuilder* itemRequestBuilder = [[self.client drive] items:@"root"];
+//    ODChildrenCollectionRequestBuilder* collectionBuilder = [itemRequestBuilder children];
+//    ODChildrenCollectionRequest* request = [collectionBuilder request];
+    
+//    [[[[[self.client drive] items:@"root"] children] request] getWithCompletion:^(ODCollection *response, ODChildrenCollectionRequest *nextRequest, NSError *error) {
+//        if (error){
+//            NSLog(@"%@", error.localizedDescription);
+//        }
+//        else {
+//            for(ODItem* item in response.value) {
+//                NSLog(@"%@", item.debugDescription);
+//            }
+//        }
+//    }];
+    
     [[[[self.client drive] items:@"root"] request] getWithCompletion:completionHandler];
     
 }

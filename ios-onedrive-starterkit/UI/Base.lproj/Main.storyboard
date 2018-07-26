@@ -111,7 +111,7 @@
                                     <navigationItem title="Details" id="09b-ky-7E2">
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="miP-dw-UEB">
                                             <connections>
-                                                <segue destination="SnQ-VN-G7c" kind="unwind" unwindAction="unwind3:" id="Lok-mD-3pY"/>
+                                                <segue destination="SnQ-VN-G7c" kind="unwind" unwindAction="unwind:" id="DHY-VV-cLE"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

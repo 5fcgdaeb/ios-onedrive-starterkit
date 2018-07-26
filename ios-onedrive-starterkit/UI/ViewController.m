@@ -72,33 +72,23 @@
             });
         }
     }];
-    
-//    [[[[[self.client drive] items:@"root"] children] request] getWithCompletion:^(ODCollection *response, ODChildrenCollectionRequest *nextRequest, NSError *error) {
-//        if (error){
-//            NSLog(@"%@", error.localizedDescription);
-//        }
-//        else {
-//            for(ODItem* item in response.value) {
-//                NSLog(@"%@", item.debugDescription);
-//            }
-//        }
-//    }];
 
 }
 
 - (IBAction) viewItemTapped: (id)sender {
     
-    [self.api itemWithId:@"01MATGSSN6Y2GOVW7725BZO354PWSELRRZ" completionHandler:^(ODItem *item, NSError *error) {
+    [self.api itemWithId:@"01MATGSSLIAGYPF2S22NAIGPWV3MW3KGIE" completionHandler:^(ODItem *item, NSError *error) {
         if (error){
             NSLog(@"%@", error.localizedDescription);
         }
         else {
             NSLog(@"%@", item.debugDescription);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self launchItemDetailVCWithItem:item];
+            });
         }
     }];
 }
-
-
 
 - (IBAction) uploadTapped: (id)sender {
     
@@ -135,7 +125,7 @@
     }];
 }
 
-- (IBAction) unwind3:(UIStoryboardSegue *) segue {
+- (IBAction) unwind:(UIStoryboardSegue *) segue {
     NSLog(@"Unwind happened.");
 }
 
