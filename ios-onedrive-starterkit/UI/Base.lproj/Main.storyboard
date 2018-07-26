@@ -32,12 +32,16 @@
                                         <rect key="frame" x="125" y="60" width="117" height="30"/>
                                         <state key="normal" title="View Root Folder"/>
                                         <connections>
+                                            <action selector="viewRootFolderTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5e-rn-IoR"/>
                                             <action selector="viewTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUP-q7-DN2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jN6-wz-fPC" userLabel="Fetch Item">
                                         <rect key="frame" x="81" y="120" width="205" height="30"/>
                                         <state key="normal" title="Fetch Any File/Folder By Its ID"/>
+                                        <connections>
+                                            <action selector="viewItemTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i7u-Uz-JNI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyB-hm-Bgu" userLabel="Upload File">
                                         <rect key="frame" x="65.5" y="180" width="236" height="30"/>

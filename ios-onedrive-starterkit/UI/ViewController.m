@@ -59,23 +59,14 @@
     }];
 }
 
-- (IBAction) viewTapped: (id)sender {
+- (IBAction) viewRootFolderTapped: (id)sender {
     
-    [self.api rootFolder:^(ODItem *response, NSError *error) {
+    [self.api rootFolder:^(ODItem *folder, NSError *error) {
         if (error){
             NSLog(@"%@", error.localizedDescription);
         }
         else {
-            NSLog(@"%@", response.debugDescription);
-        }
-    }];
-    
-    [self.api itemWithId:@"01MATGSSN6Y2GOVW7725BZO354PWSELRRZ" completionHandler:^(ODItem *response, NSError *error) {
-        if (error){
-            NSLog(@"%@", error.localizedDescription);
-        }
-        else {
-            NSLog(@"%@", response.debugDescription);
+            NSLog(@"%@", folder.debugDescription);
         }
     }];
     
@@ -89,9 +80,22 @@
 //            }
 //        }
 //    }];
-    
 
 }
+
+- (IBAction) viewItemTapped: (id)sender {
+    
+    [self.api itemWithId:@"01MATGSSN6Y2GOVW7725BZO354PWSELRRZ" completionHandler:^(ODItem *item, NSError *error) {
+        if (error){
+            NSLog(@"%@", error.localizedDescription);
+        }
+        else {
+            NSLog(@"%@", item.debugDescription);
+        }
+    }];
+}
+
+
 
 - (IBAction) uploadTapped: (id)sender {
     
@@ -104,7 +108,7 @@
         return;
     }
     
-    [self.api upload:data withFileName:@"Sampo.pdf" completionHandler:^(NSError *error) {
+    [self.api uploadToRootFolder:data withFileName:@"Sample_PDF.pdf" completionHandler:^(NSError *error) {
         if(error) {
             NSLog(@"%@", error.localizedDescription);
         }

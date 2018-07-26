@@ -15,10 +15,11 @@
 - (BOOL) isLoggedIn;
 - (void) logoutWithHandler: (void (^)(NSError *error)) handler;
 
-- (void) rootFolder:(void (^)(ODItem *response, NSError *error)) handler;
-- (void) itemWithId: (NSString*) itemId completionHandler:(void (^)(ODItem *response, NSError *error)) handler;
+- (void) rootFolder:(void (^)(ODItem *folder, NSError *error)) handler;
+- (void) itemWithId: (NSString*) itemId completionHandler:(void (^)(ODItem *item, NSError *error)) handler;
 
-- (void) upload: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler;
+- (void) uploadToRootFolder: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler;
+- (void) uploadToFolderId: (NSString*) folderItemId theData: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler;
 
 
 @end

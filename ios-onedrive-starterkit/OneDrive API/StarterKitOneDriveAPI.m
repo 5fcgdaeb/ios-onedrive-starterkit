@@ -30,22 +30,30 @@
     
 }
 
-- (void) rootFolder:(void (^)(ODItem *response, NSError *error))completionHandler {
+- (void) rootFolder:(void (^)(ODItem *folder, NSError *error))completionHandler {
     
     [[[[self.client drive] items:@"root"] request] getWithCompletion:completionHandler];
-    [self availableDrives];
     
 }
 
-- (void) itemWithId: (NSString*) itemId completionHandler:(void (^)(ODItem *response, NSError *error)) handler {
+- (void) itemWithId: (NSString*) itemId completionHandler:(void (^)(ODItem *item, NSError *error)) handler {
     
     [[[[self.client drive] items:itemId]  request] getWithCompletion: handler];
     
 }
 
-- (void) upload: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler {
+- (void) uploadToRootFolder: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler {
     
     ODItemContentRequest* request = [[[[self.client drive] items:@"root"] itemByPath:filename] contentRequest];
+    
+    [request uploadFromData:data completion:^(ODItem *response, NSError *error) {
+        handler(error);
+    }];
+}
+
+- (void) uploadToFolderId: (NSString*) folderItemId theData: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler {
+    
+    ODItemContentRequest* request = [[[self.client drive] items:folderItemId] contentRequest];
     
     [request uploadFromData:data completion:^(ODItem *response, NSError *error) {
         handler(error);
