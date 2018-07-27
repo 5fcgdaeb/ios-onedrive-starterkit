@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="qzg-WG-y8x">
-                                <rect key="frame" x="4" y="64" width="367" height="270"/>
+                                <rect key="frame" x="4" y="64" width="367" height="390"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-4H-cve" userLabel="Authenticate">
                                         <rect key="frame" x="89.5" y="0.0" width="188" height="30"/>
@@ -42,15 +42,29 @@
                                             <action selector="viewItemTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i7u-Uz-JNI"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwn-Ye-wwh" userLabel="Download Item">
+                                        <rect key="frame" x="102" y="180" width="163" height="30"/>
+                                        <state key="normal" title="Download Item By Its ID"/>
+                                        <connections>
+                                            <action selector="downloadItembyIdTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qhh-9q-2XE"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyB-hm-Bgu" userLabel="Upload File">
-                                        <rect key="frame" x="65.5" y="180" width="236" height="30"/>
+                                        <rect key="frame" x="65.5" y="240" width="236" height="30"/>
                                         <state key="normal" title="Upload Sample File To Root Folder"/>
                                         <connections>
                                             <action selector="uploadTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IN7-P3-BN5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz5-eh-Xyd" userLabel="Upload By ID File">
+                                        <rect key="frame" x="64" y="300" width="239" height="30"/>
+                                        <state key="normal" title="Upload Sample File To Folder by ID"/>
+                                        <connections>
+                                            <action selector="uploadByIDTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FsJ-uA-Ni7"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teE-fj-jhv" userLabel="Logout">
-                                        <rect key="frame" x="157.5" y="240" width="52" height="30"/>
+                                        <rect key="frame" x="157.5" y="360" width="52" height="30"/>
                                         <state key="normal" title="Log out"/>
                                         <connections>
                                             <action selector="logoutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h2R-TM-bfW"/>
@@ -69,9 +83,11 @@
                     </view>
                     <connections>
                         <outlet property="authenticateButton" destination="Gta-4H-cve" id="MLK-Fj-8KI"/>
+                        <outlet property="downloadtemButton" destination="nwn-Ye-wwh" id="uSF-PR-N4B"/>
                         <outlet property="fetchItemButton" destination="jN6-wz-fPC" id="Xx8-iz-NA7"/>
                         <outlet property="logoutButton" destination="teE-fj-jhv" id="Xri-Oq-gvx"/>
                         <outlet property="uploadButton" destination="kyB-hm-Bgu" id="Byl-d2-ayp"/>
+                        <outlet property="uploadByIdButton" destination="Gz5-eh-Xyd" id="4xx-Ve-ReC"/>
                         <outlet property="viewRootButton" destination="pS4-1D-L1I" id="H8K-yK-qVS"/>
                     </connections>
                 </viewController>

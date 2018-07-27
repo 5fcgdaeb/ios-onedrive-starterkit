@@ -17,9 +17,10 @@
 
 - (void) rootFolder:(void (^)(ODItem *folder, NSError *error)) handler;
 - (void) itemWithId: (NSString*) itemId completionHandler:(void (^)(ODItem *item, NSError *error)) handler;
+- (void) downloadItemWithId: (NSString*) itemId completionHandler: (void (^)(NSURL *location, NSURLResponse *response, NSError *error)) handler;
 
-- (void) uploadToRootFolder: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler;
-- (void) uploadToFolderId: (NSString*) folderItemId theData: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler;
+- (void) uploadToRootFolder: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(ODItem *response, NSError *error)) handler;
+- (void) uploadToFolderId: (NSString*) folderItemId theData: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(ODItem *response, NSError *error)) handler;
 
 
 @end

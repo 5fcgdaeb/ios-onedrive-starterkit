@@ -38,6 +38,12 @@
     
     [[[[self.client drive] items:@"root"] request] getWithCompletion:completionHandler];
     
+    [[[[[self.client drive] items:@"root"] children] request] getWithCompletion:^(ODCollection *response, ODChildrenCollectionRequest *nextRequest, NSError *error) {
+        for(ODItem* item in response.value) {
+            NSLog(item.id);
+        }
+    }];
+    
 }
 
 - (void) itemWithId: (NSString*) itemId completionHandler:(void (^)(ODItem *item, NSError *error)) handler {
@@ -46,21 +52,28 @@
     
 }
 
-- (void) uploadToRootFolder: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler {
+- (void) downloadItemWithId: (NSString*) itemId completionHandler: (void (^)(NSURL *location, NSURLResponse *response, NSError *error)) handler {
+    
+    [[[[self.client drive] items:itemId] contentRequest] downloadWithCompletion:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        handler(location, response, error);
+    }];
+}
+
+- (void) uploadToRootFolder: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(ODItem *response, NSError *error)) handler {
     
     ODItemContentRequest* request = [[[[self.client drive] items:@"root"] itemByPath:filename] contentRequest];
     
     [request uploadFromData:data completion:^(ODItem *response, NSError *error) {
-        handler(error);
+        handler(response, error);
     }];
 }
 
-- (void) uploadToFolderId: (NSString*) folderItemId theData: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(NSError *error)) handler {
+- (void) uploadToFolderId: (NSString*) folderItemId theData: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(ODItem *response, NSError *error)) handler {
     
-    ODItemContentRequest* request = [[[self.client drive] items:folderItemId] contentRequest];
+    ODItemContentRequest* request = [[[[self.client drive] items:folderItemId] itemByPath:filename] contentRequest];
     
     [request uploadFromData:data completion:^(ODItem *response, NSError *error) {
-        handler(error);
+        handler(response, error);
     }];
 }
 
