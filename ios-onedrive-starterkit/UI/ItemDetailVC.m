@@ -12,28 +12,72 @@
 @property(strong) ODItem* item;
 @property (weak, nonatomic) IBOutlet UITableView *itemDetailTableView;
 @property(strong) NSMutableArray* itemDetails;
+@property(strong) NSMutableArray* dataTitles;
 @end
 
 @implementation ItemDetailVC
 
 - (void)configureWithItem:(ODItem *)item {
     self.item = item;
+    [self configureDataTitles];
+    
     self.itemDetails = [[NSMutableArray alloc] init];
     [self.itemDetails addObject:self.item.name];
     [self.itemDetails addObject:self.item.id];
     [self.itemDetails addObject:self.item.createdDateTime.description];
+    [self.itemDetails addObject:[self fileOrFolderInfoForItem:self.item]];
+    [self.itemDetails addObject:[self childrenInfoForItem:self.item]];
+    
     [self.itemDetailTableView reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"BasicCell"];
     NSString* theDetail = self.itemDetails[indexPath.row];
-    cell.textLabel.text = theDetail;
+    NSString* theTitle = self.dataTitles[indexPath.row];
+    
+    cell.textLabel.text = theTitle;
+    cell.detailTextLabel.text = theDetail;
+    
     return cell;
+}
+
+- (void) configureDataTitles {
+    self.dataTitles = [[NSMutableArray alloc] init];
+    [self.dataTitles addObject:@"Name"];
+    [self.dataTitles addObject:@"ID"];
+    [self.dataTitles addObject:@"Created At"];
+    [self.dataTitles addObject:@"Is File or Folder"];
+    [self.dataTitles addObject:@"Children IDs"];
+}
+
+- (NSString*) fileOrFolderInfoForItem: (ODItem*) item {
+    if(item.folder) {
+        return @"Folder";
+    }
+    else {
+        return @"File";
+    }
+}
+
+- (NSString*) childrenInfoForItem: (ODItem*) item {
+    
+    NSMutableString* childrenString = @"";
+    
+    for(ODItem* child in item.children) {
+        [childrenString appendString:child.id];
+    }
+    if([childrenString isEqualToString:@""]) {
+        return @"None";
+    }
+    else {
+        return childrenString;
+    }
 }
 
 @end
