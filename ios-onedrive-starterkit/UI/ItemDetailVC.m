@@ -52,8 +52,8 @@
     [self.dataTitles addObject:@"Name"];
     [self.dataTitles addObject:@"ID"];
     [self.dataTitles addObject:@"Created At"];
-    [self.dataTitles addObject:@"Is File or Folder"];
-    [self.dataTitles addObject:@"Children IDs"];
+    [self.dataTitles addObject:@"Is File or Folder?"];
+    [self.dataTitles addObject:@"Children Count"];
 }
 
 - (NSString*) fileOrFolderInfoForItem: (ODItem*) item {
@@ -67,16 +67,11 @@
 
 - (NSString*) childrenInfoForItem: (ODItem*) item {
     
-    NSMutableString* childrenString = @"";
-    
-    for(ODItem* child in item.children) {
-        [childrenString appendString:child.id];
-    }
-    if([childrenString isEqualToString:@""]) {
-        return @"None";
+    if(item.folder) {
+        return [NSString stringWithFormat:@"%d", item.folder.childCount];
     }
     else {
-        return childrenString;
+        return @"None";
     }
 }
 
