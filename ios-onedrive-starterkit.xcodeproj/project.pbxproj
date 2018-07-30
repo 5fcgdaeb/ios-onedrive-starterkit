@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		926477CDDDB68E78A6FF07A0 /* Pods_ios_onedrive_starterkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81CD2C77AD927D559116035 /* Pods_ios_onedrive_starterkit.framework */; };
 		BB5B0AFE2107985500B3D5BD /* StarterKitOneDriveAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5B0AFD2107985500B3D5BD /* StarterKitOneDriveAPI.m */; };
 		BBAE13F921099BF800CFF7DB /* Sample_PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BBAE13F621099BF800CFF7DB /* Sample_PDF.pdf */; };
 		BBAE140D2109F35C00CFF7DB /* ItemDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAE140C2109F35C00CFF7DB /* ItemDetailVC.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55B207F6CE8F33AE51896467 /* Pods-ios-onedrive-starterkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-onedrive-starterkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-onedrive-starterkit/Pods-ios-onedrive-starterkit.release.xcconfig"; sourceTree = "<group>"; };
+		7A42A6B8E35761957D6FB9EA /* Pods-ios-onedrive-starterkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-onedrive-starterkit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-onedrive-starterkit/Pods-ios-onedrive-starterkit.debug.xcconfig"; sourceTree = "<group>"; };
 		BB5B0AF9210790E500B3D5BD /* OneDriveAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneDriveAPI.h; sourceTree = "<group>"; };
 		BB5B0AFC2107985500B3D5BD /* StarterKitOneDriveAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarterKitOneDriveAPI.h; sourceTree = "<group>"; };
 		BB5B0AFD2107985500B3D5BD /* StarterKitOneDriveAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarterKitOneDriveAPI.m; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		BBE5040721060C2C0039DDA7 /* OneDriveKeys-Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OneDriveKeys-Sample.plist"; sourceTree = "<group>"; };
 		BBE5040921060C7E0039DDA7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		BBE5040B2106120D0039DDA7 /* ios-onedrive-starterkit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ios-onedrive-starterkit-Prefix.pch"; sourceTree = "<group>"; };
+		C81CD2C77AD927D559116035 /* Pods_ios_onedrive_starterkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_onedrive_starterkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,12 +73,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBE504002105FE6F0039DDA7 /* OneDriveSDK.framework in Frameworks */,
+				926477CDDDB68E78A6FF07A0 /* Pods_ios_onedrive_starterkit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7DB48E01A6210EAA325E0E46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A42A6B8E35761957D6FB9EA /* Pods-ios-onedrive-starterkit.debug.xcconfig */,
+				55B207F6CE8F33AE51896467 /* Pods-ios-onedrive-starterkit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BB5B0AF6210790B700B3D5BD /* OneDrive API */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +106,7 @@
 				BBE503D42105E3D20039DDA7 /* Products */,
 				BBE503EC2105EF0D0039DDA7 /* dependencies */,
 				BBE503FF2105FE6F0039DDA7 /* Frameworks */,
+				7DB48E01A6210EAA325E0E46 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +152,7 @@
 		BBE503FF2105FE6F0039DDA7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C81CD2C77AD927D559116035 /* Pods_ios_onedrive_starterkit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBE503E92105E3D40039DDA7 /* Build configuration list for PBXNativeTarget "ios-onedrive-starterkit" */;
 			buildPhases = (
+				3F4DCF4F8CD8A3C79A6B755B /* [CP] Check Pods Manifest.lock */,
 				BBE503CF2105E3D20039DDA7 /* Sources */,
 				BBE503D02105E3D20039DDA7 /* Frameworks */,
 				BBE503D12105E3D20039DDA7 /* Resources */,
+				65BFD14DF13026260FFF3F58 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +284,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F4DCF4F8CD8A3C79A6B755B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-onedrive-starterkit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65BFD14DF13026260FFF3F58 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ios-onedrive-starterkit/Pods-ios-onedrive-starterkit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ADAL/ADAL.framework",
+				"${BUILT_PRODUCTS_DIR}/Base32/Base32.framework",
+				"${BUILT_PRODUCTS_DIR}/OneDriveSDK/OneDriveSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADAL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Base32.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneDriveSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-onedrive-starterkit/Pods-ios-onedrive-starterkit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BBE503CF2105E3D20039DDA7 /* Sources */ = {
@@ -414,13 +475,13 @@
 		};
 		BBE503EA2105E3D40039DDA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A42A6B8E35761957D6FB9EA /* Pods-ios-onedrive-starterkit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WCG9HNJRTD;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-onedrive-starterkit/Resources/ios-onedrive-starterkit-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../onedrive-sdk-ios/OneDriveSDK/**";
 				INFOPLIST_FILE = "ios-onedrive-starterkit/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,13 +495,13 @@
 		};
 		BBE503EB2105E3D40039DDA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55B207F6CE8F33AE51896467 /* Pods-ios-onedrive-starterkit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WCG9HNJRTD;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ios-onedrive-starterkit/Resources/ios-onedrive-starterkit-Prefix.pch";
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../onedrive-sdk-ios/OneDriveSDK/**";
 				INFOPLIST_FILE = "ios-onedrive-starterkit/Configuration/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
