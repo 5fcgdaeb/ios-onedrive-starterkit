@@ -102,6 +102,7 @@
 		BBE503CA2105E3D20039DDA7 = {
 			isa = PBXGroup;
 			children = (
+				BBE5040921060C7E0039DDA7 /* README.md */,
 				BBE503D52105E3D20039DDA7 /* ios-onedrive-starterkit */,
 				BBE503D42105E3D20039DDA7 /* Products */,
 				BBE503EC2105EF0D0039DDA7 /* dependencies */,
@@ -121,7 +122,6 @@
 		BBE503D52105E3D20039DDA7 /* ios-onedrive-starterkit */ = {
 			isa = PBXGroup;
 			children = (
-				BBE5040921060C7E0039DDA7 /* README.md */,
 				BBE503D62105E3D20039DDA7 /* AppDelegate.h */,
 				BBE503D72105E3D20039DDA7 /* AppDelegate.m */,
 				BBE5040221060A0D0039DDA7 /* UI */,
