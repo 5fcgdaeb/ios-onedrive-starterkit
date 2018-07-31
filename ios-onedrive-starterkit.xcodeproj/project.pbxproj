@@ -17,28 +17,10 @@
 		BBE503E02105E3D40039DDA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBE503DF2105E3D40039DDA7 /* Assets.xcassets */; };
 		BBE503E32105E3D40039DDA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBE503E12105E3D40039DDA7 /* LaunchScreen.storyboard */; };
 		BBE503E62105E3D40039DDA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE503E52105E3D40039DDA7 /* main.m */; };
-		BBE504002105FE6F0039DDA7 /* OneDriveSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE503F42105EF2F0039DDA7 /* OneDriveSDK.framework */; };
 		BBE5040621060BCC0039DDA7 /* OneDriveKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBE5040521060BCC0039DDA7 /* OneDriveKeys.plist */; };
 		BBE5040821060C2C0039DDA7 /* OneDriveKeys-Sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBE5040721060C2C0039DDA7 /* OneDriveKeys-Sample.plist */; };
 		BBE5040A21060C7E0039DDA7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BBE5040921060C7E0039DDA7 /* README.md */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BBE503F32105EF2F0039DDA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BBE503ED2105EF2F0039DDA7 /* OneDriveSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 10B4D1201AF8215D0083D86C;
-			remoteInfo = OneDriveSDK;
-		};
-		BBE503F52105EF2F0039DDA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BBE503ED2105EF2F0039DDA7 /* OneDriveSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 10B4D32D1AF827D80083D86C;
-			remoteInfo = OneDriveSDKTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		55B207F6CE8F33AE51896467 /* Pods-ios-onedrive-starterkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-onedrive-starterkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-onedrive-starterkit/Pods-ios-onedrive-starterkit.release.xcconfig"; sourceTree = "<group>"; };
@@ -59,7 +41,6 @@
 		BBE503E22105E3D40039DDA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBE503E42105E3D40039DDA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBE503E52105E3D40039DDA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BBE503ED2105EF2F0039DDA7 /* OneDriveSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OneDriveSDK.xcodeproj; path = "../../onedrive-sdk-ios/OneDriveSDK/OneDriveSDK.xcodeproj"; sourceTree = "<group>"; };
 		BBE5040521060BCC0039DDA7 /* OneDriveKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = OneDriveKeys.plist; sourceTree = "<group>"; };
 		BBE5040721060C2C0039DDA7 /* OneDriveKeys-Sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OneDriveKeys-Sample.plist"; sourceTree = "<group>"; };
 		BBE5040921060C7E0039DDA7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -72,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBE504002105FE6F0039DDA7 /* OneDriveSDK.framework in Frameworks */,
 				926477CDDDB68E78A6FF07A0 /* Pods_ios_onedrive_starterkit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,7 +85,6 @@
 				BBE5040921060C7E0039DDA7 /* README.md */,
 				BBE503D52105E3D20039DDA7 /* ios-onedrive-starterkit */,
 				BBE503D42105E3D20039DDA7 /* Products */,
-				BBE503EC2105EF0D0039DDA7 /* dependencies */,
 				BBE503FF2105FE6F0039DDA7 /* Frameworks */,
 				7DB48E01A6210EAA325E0E46 /* Pods */,
 			);
@@ -130,23 +109,6 @@
 				BBE50401210604710039DDA7 /* Configuration */,
 			);
 			path = "ios-onedrive-starterkit";
-			sourceTree = "<group>";
-		};
-		BBE503EC2105EF0D0039DDA7 /* dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				BBE503ED2105EF2F0039DDA7 /* OneDriveSDK.xcodeproj */,
-			);
-			path = dependencies;
-			sourceTree = "<group>";
-		};
-		BBE503EE2105EF2F0039DDA7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BBE503F42105EF2F0039DDA7 /* OneDriveSDK.framework */,
-				BBE503F62105EF2F0039DDA7 /* OneDriveSDKTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BBE503FF2105FE6F0039DDA7 /* Frameworks */ = {
@@ -238,35 +200,12 @@
 			mainGroup = BBE503CA2105E3D20039DDA7;
 			productRefGroup = BBE503D42105E3D20039DDA7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BBE503EE2105EF2F0039DDA7 /* Products */;
-					ProjectRef = BBE503ED2105EF2F0039DDA7 /* OneDriveSDK.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BBE503D22105E3D20039DDA7 /* ios-onedrive-starterkit */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BBE503F42105EF2F0039DDA7 /* OneDriveSDK.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = OneDriveSDK.framework;
-			remoteRef = BBE503F32105EF2F0039DDA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		BBE503F62105EF2F0039DDA7 /* OneDriveSDKTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = OneDriveSDKTests.xctest;
-			remoteRef = BBE503F52105EF2F0039DDA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BBE503D12105E3D20039DDA7 /* Resources */ = {

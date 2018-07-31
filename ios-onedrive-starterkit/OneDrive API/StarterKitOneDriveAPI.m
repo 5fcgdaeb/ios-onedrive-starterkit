@@ -17,6 +17,7 @@
 - (instancetype)init: (ODClient*) client {
     self = [super init];
     self.client = client;
+    self.client.logger = [[ODLogger alloc] initWithLogLevel:ODLogVerbose];
     return self;
 }
 
@@ -36,6 +37,7 @@
 //    ODChildrenCollectionRequestBuilder* collectionBuilder = [itemRequestBuilder children];
 //    ODChildrenCollectionRequest* request = [collectionBuilder request];
     
+//    [self availableDrives];
     [[[[self.client drive] items:@"root"] request] getWithCompletion:completionHandler];
     
     [[[[[self.client drive] items:@"root"] children] request] getWithCompletion:^(ODCollection *response, ODChildrenCollectionRequest *nextRequest, NSError *error) {
@@ -78,9 +80,10 @@
 }
 
 - (void) availableDrives {
-    [[[self.client drives] request] getWithCompletion:^(ODCollection *response, ODDrivesCollectionRequest *nextRequest, NSError *error) {
+    
+    [[[[self.client drives] drive:@"sites/BoxDCTMMigration/drive"] request] getWithCompletion:^(ODDrive *response, NSError *error) {
         NSLog(@"hello");
     }];
-}
 
+}
 @end
