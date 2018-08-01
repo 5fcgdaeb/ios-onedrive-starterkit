@@ -40,11 +40,11 @@
 //    [self availableDrives];
     [[[[self.client drive] items:@"root"] request] getWithCompletion:completionHandler];
     
-    [[[[[self.client drive] items:@"root"] children] request] getWithCompletion:^(ODCollection *response, ODChildrenCollectionRequest *nextRequest, NSError *error) {
-        for(ODItem* item in response.value) {
-            NSLog(item.id);
-        }
-    }];
+//    [[[[[self.client drive] items:@"root"] children] request] getWithCompletion:^(ODCollection *response, ODChildrenCollectionRequest *nextRequest, NSError *error) {
+//        for(ODItem* item in response.value) {
+//            NSLog(item.id);
+//        }
+//    }];
     
 }
 

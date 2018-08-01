@@ -7,7 +7,6 @@ A project that offers a very smooth integration to OneDrive API. Feel free to us
 1. Via Cocoapods in the **master** branch. Simply do a **pod install** after cloning the project.
 2. Old style drag and drop project file integration. This is offered in the **retro_dependency** branch. No installation steps required after cloning this branch. You just need to have the onedrive-ios-sdk project in the same directory level.
 
-
 # Usage
 
 The project offers a very simple and lean interface to the OneDrive API. It provides one higher level of abstraction to the OneDrive API. Here is how the interface looks like:
@@ -30,3 +29,10 @@ The project offers a very simple and lean interface to the OneDrive API. It prov
 
 @end
 ```
+
+# UI
+
+The user interface offers a very simple way to perform basic OneDrive SDK operations.
+
+
+![alt text](https://media.giphy.com/media/1BeD0A2guAQIFpvkiG/giphy.gif "Sample UI")
