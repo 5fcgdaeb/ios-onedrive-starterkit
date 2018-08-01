@@ -73,6 +73,7 @@
 - (void) uploadToFolderId: (NSString*) folderItemId theData: (NSData*) data withFileName:(NSString*) filename completionHandler: (void (^)(ODItem *response, NSError *error)) handler {
     
     ODItemContentRequest* request = [[[[self.client drive] items:folderItemId] itemByPath:filename] contentRequest];
+//    ODItemContentRequest* request = [[[[self.client drives:@"b!ow_oJR_B8k-ktCxMufglHBxhjOIg7bZBraiazyFuE6yw-BPnRU9lQ7JuGtIyS1GI"] items:folderItemId] itemByPath:filename] contentRequest];
     
     [request uploadFromData:data completion:^(ODItem *response, NSError *error) {
         handler(response, error);

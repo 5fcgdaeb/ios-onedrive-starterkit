@@ -50,7 +50,7 @@
     }
 }
 - (IBAction) authenticateTapped: (id)sender {
-
+    
     [ODClient clientWithCompletion:^(ODClient *client, NSError *error){
         if (error){
             NSLog(@"%@", error.localizedDescription);
@@ -162,7 +162,7 @@
     // 01MATGSSN6Y2GOVW7725BZO354PWSELRRZ - Root Folder
     // 01MATGSSLIAGYPF2S22NAIGPWV3MW3KGIE - Sample.PDF at the root folder
     
-    [self.api uploadToFolderId:@"01MATGSSK6KVIGNWFQTBHKMLW76BQL3V35" theData:data withFileName:@"Sample_PDF.pdf" completionHandler:^(ODItem *response, NSError *error) {
+    [self.api uploadToFolderId:@"016RHULP3BFEMRTZC7XBDLQV5ZCAYN34ZL" theData:data withFileName:@"Sample_PDF.pdf" completionHandler:^(ODItem *response, NSError *error) {
         NSString* message = @"";
         if(error) {
             NSLog(@"%@", error.localizedDescription);

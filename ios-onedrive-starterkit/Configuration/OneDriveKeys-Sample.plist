@@ -6,5 +6,9 @@
 	<string>APP_ID</string>
 	<key>redirectURL</key>
 	<string>REDIRECT_URL</string>
+    <key>apiEndpoint</key>
+    <string>OPTIONAL</string>
+    <key>resource</key>
+    <string>OPTIONAL</string>
 </dict>
 </plist>

@@ -35,6 +35,15 @@
     
     [ODClient setActiveDirectoryAppId:appId redirectURL:redirectURL];
     
+    NSString* apiEndpoint = keysDictionary[@"apiEndpoint"];;
+    NSString* resourceId = keysDictionary[@"resource"];
+    
+    if(apiEndpoint && resourceId) {
+        ODAppConfiguration* config = [ODAppConfiguration defaultConfiguration];
+        config.activeDirectoryApiEndpointURL = apiEndpoint;
+        config.activeDirectoryResourceId = resourceId;
+    }
+    
     return YES;
 }
 
